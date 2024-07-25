@@ -18,27 +18,26 @@
 # C can be placed before D (500) and M (1000) to make 400 and 900.
 # Given a roman numeral, convert it to an integer.
 
-def romanToInt(s):
-    roman = {
-        'I': 1,
-        'V': 5,
-        'X': 10,
-        'L': 50,
-        'C': 100,
-        'D': 500,
-        'M': 1000
-    }
-    result = 0
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        roman = {
+            "I" : 1,
+            "V": 5,
+            "X": 10,
+            "L": 50,
+            "C": 100,
+            "D": 500,
+            "M": 1000
+        }
+        result = 0
 
-    for i in range(len(s)):
-        if i + 1 < len(s) and roman[s[i]] < roman[s[i + 1]]:
-            result -= roman[s[i]]
-        else:
-            result += roman[s[i]]
-    return result
+        for i in range(len(s)):
+            if i + 1 < len(s) and roman[s[i]] < roman[s[i + 1]]:
+                result -= roman[s[i]]
+            else:
+                result += roman[s[i]]
+        return result
 
-
-print(romanToInt("III"))  # 3
-print(romanToInt("LVIII"))  # 58
-print(romanToInt("MCMXCIV"))  # 1994
-print("f")
+    print(romanToInt("III", "III"))  # 3
+    print(romanToInt("LVIII", "LVIII"))  # 58
+    print(romanToInt("MCMXCIV", "MCMXCIV"))  # 1994
