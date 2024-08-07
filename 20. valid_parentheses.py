@@ -14,3 +14,21 @@
 # Output: false
 
 def isValid(s: str):
+    map = {
+        ")": "(",
+        "]": "[",
+        "}": "{"
+    }
+    stack = []
+
+    for c in s:
+        if c not in map: # is an open parentheses
+            stack.append(c)
+        else:
+
+
+    return not stack
+
+print(isValid("()"))
+print(isValid("()[]{}"))
+print(isValid("(]"))
