@@ -24,7 +24,7 @@ def isValid(s: str):
     for c in s:
         if c not in hashmap:  # is an open parentheses
             stack.append(c)
-        elif stack[-1] == hashmap[c]:  # is a closing parentheses
+        elif stack and stack[-1] == hashmap[c]:  # is a closing parentheses
             stack.pop()
         else:
             return False
