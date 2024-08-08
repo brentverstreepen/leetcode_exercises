@@ -14,7 +14,7 @@
 # Output: false
 
 def isValid(s: str):
-    map = {
+    hashmap = {
         ")": "(",
         "]": "[",
         "}": "{"
@@ -22,12 +22,14 @@ def isValid(s: str):
     stack = []
 
     for c in s:
-        if c not in map: # is an open parentheses
+        if c not in hashmap:  # is an open parentheses
             stack.append(c)
+        elif stack[-1] == hashmap[c]:  # is a closing parentheses
+            stack.pop()
         else:
-
-
+            return False
     return not stack
+
 
 print(isValid("()"))
 print(isValid("()[]{}"))
