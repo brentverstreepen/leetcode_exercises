@@ -19,12 +19,12 @@
 # Note that the five elements can be returned in any order.
 # It does not matter what you leave beyond the returned k (hence they are underscores).
 def removeElement(nums: list[int], val: int):
-    insert_index = 0
-    for i in range(0, len(nums)):
+    length = 0
+    for i in range(len(nums)):
         if nums[i] != val:
-            nums[insert_index] = nums[i]
-            insert_index += 1
-    return insert_index
+            nums[length] = nums[i]
+            length += 1
+    return length
 
 
 print(removeElement([3, 2, 2, 3], 3))
