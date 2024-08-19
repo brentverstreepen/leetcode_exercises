@@ -14,9 +14,26 @@
 # Input: nums = [1, 3, 5, 6], target = 7
 # Output: 4
 def searchInsert(nums: list[int], target: int):
+    n = len(nums)
+    l = 0
+    r = n - 1
+
+    while l <= r:
+        m = (l + r) // 2
+
+        if nums[m] < target:
+            l = m + 1
+        elif nums[m] > target:
+            r = m - 1
+        else:
+            return m
+
+    if nums[m] < target:
+        return m + 1
+    else:
+        return m
 
 
-
-searchInsert([1,3,5,6], 5)
-searchInsert([1,3,5,6], 2)
-searchInsert([1,3,5,6], 7)
+print(searchInsert([1, 3, 5, 6], 5))
+print(searchInsert([1, 3, 5, 6], 2))
+print(searchInsert([1, 3, 5, 6], 7))
