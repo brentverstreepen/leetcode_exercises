@@ -12,8 +12,18 @@
 # Output: 2
 # Explanation: The square root of 8 is 2.82842..., and since we round it down to the nearest integer, 2 is returned.
 def mySqrt(x: int) -> int:
+    left = 0
+    right = x
+    while left <= right:
+        mid = (left + right) // 2
+        if mid * mid < x:
+            left = mid + 1
+        elif mid * mid > x:
+            right = mid - 1
+        else:
+            return mid
+    return right
 
 
-
-mySqrt(4)
-mySqrt(8)
+print(mySqrt(4))
+print(mySqrt(8))
