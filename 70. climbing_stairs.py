@@ -15,9 +15,12 @@
 # 2. 1 step + 2 steps
 # 3. 2 steps + 1 step
 def climbStairs(n: int) -> int:
-    memo = {1:1, 2:2}
-    def f(n):
-        if n in memo
+    if n == 1:
+        return 1
+    if n == 2:
+        return 2
+
+    return climbStairs(n - 2) + climbStairs(n - 1)
 
 
 print(climbStairs(2))
